@@ -106,7 +106,7 @@ class App extends Component {
               id: this.state.user.id
             })
           })
-          .then(response => response.json())
+          //.then(response => response.json())
             .then(response => response.json())
             .then(count => {
                 this.setState(Object.assign(this.state.user, {entries: count}))
@@ -151,7 +151,7 @@ class App extends Component {
             />
             <FaceRecognition  box={box} imageUrl={imageUrl}/>
           </div>
-        : (route === 'signin'
+        : (route === 'signin' || route === 'signout'
             ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
             : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
           )
